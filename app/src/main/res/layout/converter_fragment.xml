@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.currencyconverter.features.converter.vm.ConverterViewModel" />
+            type="com.papermoon_ai.currencyconverter.features.converter.vm.ConverterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

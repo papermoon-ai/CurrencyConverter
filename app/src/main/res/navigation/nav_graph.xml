@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/converterFragment">
     <fragment
         android:id="@+id/converterFragment"
-        android:name="com.example.currencyconverter.features.converter.ui.ConverterFragment"
-        android:label="Converter"
-        tools:layout="@layout/converter_fragment">
+        android:name="com.papermoon_ai.currencyconverter.features.converter.ui.ConverterFragment"
+        android:label="Converter">
         <action
             android:id="@+id/action_converterFragment_to_selectorFragment"
             app:destination="@id/selectorFragment"
@@ -19,12 +17,11 @@
     </fragment>
     <fragment
         android:id="@+id/selectorFragment"
-        android:name="com.example.currencyconverter.features.selector.ui.SelectorFragment"
-        android:label="Selector"
-        tools:layout="@layout/selector_fragment">
+        android:name="com.papermoon_ai.currencyconverter.features.selector.ui.SelectorFragment"
+        android:label="Selector">
         <argument
             android:name="callback"
-            app:argType="com.example.currencyconverter.features.callback.SelectorResultCallback" />
+            app:argType="com.papermoon_ai.currencyconverter.features.callback.SelectorResultCallback" />
         <action
             android:id="@+id/action_selectorFragment_to_converterFragment"
             app:destination="@id/converterFragment"

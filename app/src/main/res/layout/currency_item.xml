@@ -6,7 +6,7 @@
 
         <variable
             name="currency"
-            type="com.example.currencyconverter.domain.model.CurrencyType" />
+            type="com.papermoon_ai.currencyconverter.domain.model.CurrencyType" />
     </data>
 
     <TextView
