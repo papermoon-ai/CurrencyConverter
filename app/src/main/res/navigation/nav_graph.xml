@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/converterFragment">
+    <fragment
+        android:id="@+id/converterFragment"
+        android:name="com.example.currencyconverter.features.converter.ui.ConverterFragment"
+        android:label="Converter"
+        tools:layout="@layout/converter_fragment">
+        <action
+            android:id="@+id/action_converterFragment_to_selectorFragment"
+            app:destination="@id/selectorFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectorFragment"
+        android:name="com.example.currencyconverter.features.selector.ui.SelectorFragment"
+        android:label="Selector"
+        tools:layout="@layout/selector_fragment">
+        <argument
+            android:name="callback"
+            app:argType="com.example.currencyconverter.features.callback.SelectorResultCallback" />
+        <action
+            android:id="@+id/action_selectorFragment_to_converterFragment"
+            app:destination="@id/converterFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/converterFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
