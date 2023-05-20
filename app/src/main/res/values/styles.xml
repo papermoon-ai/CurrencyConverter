@@ -44,6 +44,5 @@
 
     <style name="TextAppearance.AppCompat.Large.CurrencyItem">
         <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">italic</item>
     </style>
 </resources>

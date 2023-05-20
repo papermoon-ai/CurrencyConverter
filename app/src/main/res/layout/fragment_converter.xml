@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.papermoon.currencyconverter.features.converter.vm.ConverterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/originalMoneyEditText"
+            style="@style/OutlinedBox"
+            android:layout_marginBottom="@dimen/views_normal_margin"
+            app:layout_constraintBottom_toTopOf="@+id/swapCurrenciesButton"
+            app:layout_constraintEnd_toStartOf="@+id/changeOriginalCurrencyButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:suffixText="@{viewModel.originalCurrency.toString()}">
+
+            <com.google.android.material.textfield.TextInputEditText style="@style/EditText" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/changeOriginalCurrencyButton"
+            style="@style/ChangeCurrencyButton"
+            app:icon="@drawable/ic_round_loop_24"
+            app:layout_constraintBottom_toBottomOf="@+id/originalMoneyEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/originalMoneyEditText" />
+
+        <Button
+            android:id="@+id/changeConvertedCurrencyButton"
+            style="@style/ChangeCurrencyButton"
+            app:icon="@drawable/ic_round_loop_24"
+            app:layout_constraintBottom_toBottomOf="@+id/convertedCurrencyTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/convertedCurrencyTextView" />
+
+        <Button
+            android:id="@+id/swapCurrenciesButton"
+            style="@style/SwapCurrenciesButton"
+            android:onClick="@{() -> viewModel.swapCurrencies()}"
+            app:icon="@drawable/ic_baseline_swap_vert_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/convertedCurrencyTextView"
+            style="@style/OutlinedBox"
+            android:layout_marginTop="@dimen/views_normal_margin"
+            app:layout_constraintEnd_toStartOf="@+id/changeConvertedCurrencyButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/swapCurrenciesButton"
+            app:suffixText="@{viewModel.convertedCurrency.toString()}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/EditDisabledEditText"
+                app:roundMoney="@{viewModel.convertedValue}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
