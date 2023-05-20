@@ -5,7 +5,7 @@
     app:startDestination="@id/converterFragment">
     <fragment
         android:id="@+id/converterFragment"
-        android:name="com.papermoon_ai.currencyconverter.features.converter.ui.ConverterFragment"
+        android:name="com.papermoon.currencyconverter.features.converter.ui.ConverterFragment"
         android:label="Converter">
         <action
             android:id="@+id/action_converterFragment_to_selectorFragment"
@@ -17,11 +17,11 @@
     </fragment>
     <fragment
         android:id="@+id/selectorFragment"
-        android:name="com.papermoon_ai.currencyconverter.features.selector.ui.SelectorFragment"
+        android:name="com.papermoon.currencyconverter.features.selector.ui.SelectorFragment"
         android:label="Selector">
         <argument
             android:name="callback"
-            app:argType="com.papermoon_ai.currencyconverter.features.callback.SelectorResultCallback" />
+            app:argType="com.papermoon.currencyconverter.features.callback.SelectorResultCallback" />
         <action
             android:id="@+id/action_selectorFragment_to_converterFragment"
             app:destination="@id/converterFragment"
